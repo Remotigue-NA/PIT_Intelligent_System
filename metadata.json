@@ -1,0 +1,5 @@
+{
+  "name": "FreshCart Offline Grocery List",
+  "description": "A fully offline, simple grocery list manager with categories, quantities, and local persistence.",
+  "requestFramePermissions": []
+}
