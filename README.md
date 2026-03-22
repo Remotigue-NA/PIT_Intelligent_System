@@ -1,20 +1,36 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# FreshCart Android Build Instructions
 
-# Run and deploy your AI Studio app
+This project is set up with **Capacitor** to allow you to build an Android APK from the React web application.
 
-This contains everything you need to run your app locally.
+## Prerequisites
+- **Node.js** installed on your computer.
+- **Android Studio** installed on your computer.
+- **Java 17+** installed.
 
-View your app in AI Studio: https://ai.studio/apps/13275dcb-ab63-47fb-be1a-b493f623aff9
+## How to Build the APK
 
-## Run Locally
+1. **Download the project** from AI Studio (Export to ZIP or GitHub).
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+3. **Build the web application**:
+   ```bash
+   npm run build
+   ```
+4. **Sync with Android**:
+   ```bash
+   npm run cap:sync
+   ```
+5. **Open in Android Studio**:
+   ```bash
+   npx cap open android
+   ```
+6. **Generate APK**:
+   - In Android Studio, wait for Gradle to finish syncing.
+   - Go to **Build > Build Bundle(s) / APK(s) > Build APK(s)**.
+   - Once finished, a notification will appear with a "locate" link to your `.apk` file.
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Troubleshooting
+- If you change the React code, remember to run `npm run build` and `npm run cap:sync` before building in Android Studio.
+- Ensure your `JAVA_HOME` is correctly set to point to your Java installation.
